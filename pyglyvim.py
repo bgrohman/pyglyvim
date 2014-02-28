@@ -1,3 +1,7 @@
+# Pyglyvim
+# MIT License
+# See https://github.com/bgrohman/pyglyvim
+
 import vim
 
 # Misc
