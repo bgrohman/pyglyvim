@@ -1,12 +1,31 @@
-pyglyvim
-========
+# pyglyvim
 
 Helper functions for writing Vim plugins with Python
+
+## Highlights
+* Define vim commands as python functions
+* Manipulate the location list
+* Add/remove signs
+
+## Usage
+1. Place the pyglyvim.vim and pyglyvim.py files in your plugin directory.
+2. Import pyglyvim.vim in your vim script using the runtime command (e.g. `runtime pyglyvim.vim`).
+3. Load your python code with `python import <your-module-here>`
+4. From your python code, `import pyglyvim`.
 
 ## Functions
 
 ### cd(directory)
 Changes current directory
+
+### get_current_directory()
+Returns the current working directory
+
+### get_variable(name)
+Returns the value of the given vim variable
+
+### define_command(command_name, fn)
+Defines a vim command with the given name that calls a Python function
 
 ### clear_location_list()
 Clears the location list
