@@ -28,8 +28,7 @@ def clear_location_list():
 	vim.command("lexpr []")
 
 def add_line_to_location_list(line_number):
-	# TODO: Rewrite using setloclist
-	vim.command('laddexpr expand("%:.") . ":" . {0} . ":" . getline({0})'.format(line_number))
+	vim.eval("setloclist(0, [{'bufnr': %s, 'lnum': %s}], 'a')" % (vim.current.buffer.number, line_number))
 
 def open_location_list():
 	vim.command("lwindow")
