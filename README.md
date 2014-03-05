@@ -35,7 +35,7 @@ Defines a vim command with the given name that calls a Python function
 ### clear_location_list()
 Clears the location list
 
-### add_line_to_location_list(line_number, text="", type="")
+### add_line_to_location_list(line_number, text, type)
 Adds a line to the location list by line number
 
 ### open_location_list()
