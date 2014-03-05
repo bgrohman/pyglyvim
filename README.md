@@ -13,6 +13,11 @@ Helper functions for writing Vim plugins with Python
 3. Load your python code with `python import <your-module-here>`
 4. From your python code, `import pyglyvim`.
 
+See [vim documentation](http://vimdoc.sourceforge.net/htmldoc/if_pyth.html) for details on vim's built-in python interface.
+
+## Example Plugin
+Take a look at the [example plugin](./pyglyvimExample/).
+
 ## Functions
 
 ### cd(directory)
