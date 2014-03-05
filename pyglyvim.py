@@ -1,6 +1,7 @@
 # Pyglyvim
 # MIT License
 # See https://github.com/bgrohman/pyglyvim
+# See http://vimdoc.sourceforge.net/htmldoc/if_pyth.html for details on vim's python interface
 import sys
 import vim
 
@@ -27,8 +28,8 @@ def call_command(command_name):
 def clear_location_list():
 	vim.command("lexpr []")
 
-def add_line_to_location_list(line_number):
-	vim.eval("setloclist(0, [{'bufnr': %s, 'lnum': %s}], 'a')" % (vim.current.buffer.number, line_number))
+def add_line_to_location_list(line_number, text="", type=""):
+	vim.eval("setloclist(0, [{'bufnr': %s, 'lnum': %s, 'text': '%s', 'type': '%s'}], 'a')" % (vim.current.buffer.number, line_number, text, type))
 
 def open_location_list():
 	vim.command("lwindow")
@@ -43,7 +44,9 @@ def clear_signs():
 def define_sign(sign_name, text="*", text_highlight="Error"):
 	vim.command("sign define {0} text={1} texthl={2}".format(sign_name, text, text_highlight))
 
-def add_sign(sign_id, line_number, sign_name, file_path=vim.current.buffer.name):
+def add_sign(sign_id, line_number, sign_name, file_path=None):
+	if file_path is None:
+		file_path = vim.current.buffer.name
 	vim.command('sign place {0} line={1} name={2} file={3}'.format(sign_id, line_number, sign_name, file_path))
 
 # handle vim commands defined via pyglyvim
