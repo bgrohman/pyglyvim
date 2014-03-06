@@ -1,3 +1,7 @@
+" Pyglyvim
+" MIT License
+" See https://github.com/bgrohman/pyglyvim
+" See http://vimdoc.sourceforge.net/htmldoc/if_pyth.html for details on vim's python interface
 if !has('python')
 	finish
 endif
