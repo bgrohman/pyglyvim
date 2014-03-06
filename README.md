@@ -8,10 +8,10 @@ Helper functions for writing Vim plugins with Python
 * Add/remove signs
 
 ## Usage
-1. Place the pyglyvim.vim and pyglyvim.py files in your plugin directory.
-2. Import pyglyvim.vim in your vim script using the runtime command (e.g. `runtime pyglyvim.vim`).
-3. Load your python code with `python import <your-module-here>`
-4. From your python code, `import pyglyvim`.
+1. Place the pyglyvim.py file in your plugin directory.
+2. Load your python module in your plugin's .vim file.
+  * See the [example plugin](./pyglyvimExample/plugin/pyglyvimExample.vim) for details.
+3. From your python code, `import pyglyvim`.
 
 See [vim documentation](http://vimdoc.sourceforge.net/htmldoc/if_pyth.html) for details on vim's built-in python interface.
 
