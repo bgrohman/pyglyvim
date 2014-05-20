@@ -7,7 +7,7 @@ import vim
 
 # Misc
 def cd(directory):
-	vim.command("cd {0}".format(directory))
+	vim.command("cd {0}".format(directory.strip().replace(' ', '\\ ')))
 
 def get_current_directory():
 	return vim.eval("getcwd()")
